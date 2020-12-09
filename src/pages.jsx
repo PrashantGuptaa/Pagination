@@ -11,7 +11,7 @@ export default (props) => {
     <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
   {count.map(count => (
-    <li class="page-item"><a class="page-link" href="!#">{count} </a></li>
+    <li class="page-item"><a class="page-link" href="!#" onClick = {() => handlePage(count)} >{count} </a></li>
 
   ))}
    
