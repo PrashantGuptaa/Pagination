@@ -1,18 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
 .App {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
 }
-table, th, td {
-  border: 1px solid black;
+
+
+.padding{
+ padding: 20px;
 }
-.box{
-  height: 50px;
-  width: 50px;
-  border: 1px solid black;
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-}
-.Paginate{
-margin-top: 50px;
+.heading{
+  background: #6190E8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ color: white;
+text-shadow: 5px 5px 5px blue;
 }

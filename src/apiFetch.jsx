@@ -5,11 +5,12 @@ import Pages from './pages';
 export default () => {
   let [posts, setposts] = React.useState([]);
   let [allow, setAllow] = React.useState(false);
-  let [postPerPage, setPostPerPage] = React.useState(10);
+  let [postPerPage] = React.useState(5);
   let [totalPost, setTotalPost] = React.useState(0);
 let [currentPosts, setCurrentPosts] = React.useState(0);
 
   React.useEffect(() => {
+    console.log("Used Effect");
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
       .then((data) => {
@@ -21,7 +22,7 @@ let [currentPosts, setCurrentPosts] = React.useState(0);
        setTotalPost(data.length);
        setAllow(true); // Setting loading to false
       });
-  }, []);
+  },[]);
 
 const handlePageShow = (pageNum) => {
 let indexofLastPost = pageNum * postPerPage;
@@ -33,7 +34,7 @@ setCurrentPosts(temp);
 
   return (
     <>
-      <h1>Pagination</h1>
+      <h1 className='heading' >Pagination</h1>
 
       <Post posts={currentPosts} allow={allow} />
       <Pages totalPosts = {totalPost} postPerPage = {postPerPage}  handlePage = {handlePageShow} />

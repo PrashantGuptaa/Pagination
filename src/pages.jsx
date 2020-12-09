@@ -1,17 +1,21 @@
-import React from 'react';
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default (props) => {
-  let {totalPosts, postPerPage, handlePage} = props;
-let count = [];
-  for(let i = 0 ; i < Math.ceil(totalPosts/postPerPage); i++)
-  {
+  let { totalPosts, postPerPage, handlePage } = props;
+  let count = [];
+  for (let i = 0; i < Math.ceil(totalPosts / postPerPage); i++) {
     count.push(i + 1);
   }
-  return(
-    <div className = "Paginate">
-{count.map(count => (
-<a  href = "#" className = "box" key = {count} onClick = {() => handlePage(count) } >{count}</a>
-))}
-    </div>
-  )
-}
+  return (
+    <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+  {count.map(count => (
+    <li class="page-item"><a class="page-link" href="!#">{count} </a></li>
+
+  ))}
+   
+  </ul>
+</nav>
+    );
+};
